@@ -1,0 +1,20 @@
+<app-my-header name="Залік">
+</app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title size="large">Завдання</ion-title>
+      <p> Розробити сервіс який реалізує клас «матриця дійсних чисел». Клас повинен реалізовувати такі операції над матрицями: віднімання  заданого номером рядка з усіх інших рядків, крім цього рядка.
+        Форма для введення повинна спочатку запитати розмірність матриці, після чого сформувати відповідну кількість полів введення. Максимальна розмірність – 6 на 6.
+
+      </p>
+      <app-reactive-form (outToParent) = 'receiveFromChild($event)'></app-reactive-form>
+
+
+      <ion-card-content><h2>{{s}}</h2></ion-card-content>
+
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+

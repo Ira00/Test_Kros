@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-content>
+    <ion-item>
+      <ion-label>Введіть розмірність</ion-label>
+      <ion-input type="number" [formControl]="vec1" id="vector"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Значення розмірності - {{ vec1.value}}
+      </ion-label>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>
+<ion-button (click)='createMatrix()' expand="block" fill="outline" [disabled]="!vec1.valid">Створити матрицю
+
+  <!-- <ion-button (click)='sendToParent()' type="submit" expand="block" fill="outline" [disabled]="!vec1.valid">Submit -->
+</ion-button>
+<ion-item>
+  <form [formGroup]="form">
+    <div *ngFor="let row of form.controls;let i=index">
+      <input type="number" *ngFor="let col of row.controls" [formControl]="col">
+    </div>
+  </form>
+</ion-item>
+<ion-item>
+  <ion-label>Рядок для віднімання</ion-label>
+  <ion-input type="number" [formControl]="strr" id="vector"></ion-input>
+</ion-item>
+<ion-item><ion-button (click)='sendToParent()' expand="block" fill="outline" [disabled]="!strr.valid">Обрахувати</ion-button></ion-item>
